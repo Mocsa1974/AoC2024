@@ -1,3 +1,3 @@
-const {splitLine} = require('..\\helpers');
+const { splitLine } = require("..\\helpers");
 
-console.log(splitLine('111#333#444','#'));
+console.log(splitLine("111#333#444", "#"));
