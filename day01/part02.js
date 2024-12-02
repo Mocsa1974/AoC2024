@@ -7,10 +7,8 @@ for (let line of lines) {
   list1.push(+numbers[0]);
   list2.push(+numbers[1]);
 }
-list1.sort();
-list2.sort();
 console.log(
   list1
-    .map((m, i) => Math.abs(m - list2[i]))
+    .map((m) => m * list2.filter((f) => f == m).length)
     .reduce((acc, curr) => acc + curr, 0)
 );
