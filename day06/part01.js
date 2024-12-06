@@ -1,3 +1,16 @@
+const fs = require("fs");
+const map = fs
+  .readFileSync("./day06/input.txt", "utf-8")
+  .split("\r\n")
+  .map((m) =>
+    m.split("").map((m2) => {
+      return {
+        char: m2,
+        visited: false,
+      };
+    })
+  );
+
 let guard = {
   position: {
     x: 0,
@@ -61,24 +74,12 @@ const step = () => {
     guard.steps++;
   }
 };
-const fs = require("fs");
-const map = fs
-  .readFileSync("./day06/input.txt", "utf-8")
-  .split("\r\n")
-  .map((m) =>
-    m.split("").map((m2) => {
-      return {
-        char: m2,
-        visited: false,
-      };
-    })
-  );
 guard.position = findStartPosition();
 map[guard.position.x][guard.position.y].char = ".";
 map[guard.position.x][guard.position.y].visited = true;
 while (nextPositionValue()) {
   if (nextPositionValue() === "#") guard.direction = changePostion();
-  step();
+  else step();
 }
 
 console.log(guard.steps);
