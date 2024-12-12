@@ -163,12 +163,11 @@ for (let elem of b) {
 
         }
         tmp.push(border);
-    
+   
     }
     result.push({
-        plant:elem.plant,
         count:elem.count,
-        borders:Array.from(new Set(tmp2.map(m=>JSON.stringify(m)))).map(m=>JSON.parse(m))
+        borders:tmp2
     })
 
 }
