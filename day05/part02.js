@@ -10,7 +10,7 @@ const isValid = (str) => {
       for (let j = i + 1; j < page_list.length; j++) {
         const pair = page_list[i] + "|" + page_list[j];
         if (rules.indexOf(pair) === -1) {
-          const tmp = page_list[i];
+           const tmp = page_list[i];
           page_list[i] = page_list[j];
           page_list[j] = tmp;
           changed = true;

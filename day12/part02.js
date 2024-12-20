@@ -134,7 +134,6 @@ const b = areas
         count:m.values.length
     }
   });
-count = 1;
 let tmp = [];
 let tmp2 = [];
 let result = [];
